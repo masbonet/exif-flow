@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXIF FLOW</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>EXIF FLOW</h1>
+        <form id="metadataForm">
+            <label for="images">Pilih File</label>
+            <input type="file" id="images" name="images" multiple required>
+
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Masukkan Judul" required>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Masukkan Deskripsi" required></textarea>
+
+            <label for="keywords">Keywords</label>
+            <input type="text" id="keywords" name="keywords" placeholder="Masukkan Kata Kunci" required>
+
+            <button type="submit">START EXIF</button>
+        </form>
+
+        <!-- Preview Gambar -->
+        <div id="previewContainer"></div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Processing...</p>
+        </div>
+
+        <!-- Container Progress Bar -->
+        <div id="progressContainer" style="display: none;">
+            <p id="progressText">Proses Exif Sedang Berjalan...</p>
+            <div id="progressBar"></div>
+        </div>
+
+        <!-- Tautan Unduh -->
+        <a id="downloadLink" style="display: none;" download>Download Zip</a>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

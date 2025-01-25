@@ -1,0 +1,191 @@
+/* Animasi untuk seluruh halaman */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding-top: 20px;
+    animation: fadeInBackground 1.5s ease-in-out;
+}
+
+@keyframes fadeInBackground {
+    from {
+        background-color: #000;
+    }
+    to {
+        background-color: #f4f4f4;
+    }
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Judul */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInText 1s ease-in-out;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Label dan Form */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Tombol */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Tautan Unduh */
+#downloadLink {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    background-color: #28a745;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Progress Container */
+#progressContainer {
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Memberi jarak dengan preview container */
+}
+
+#progressBar {
+    height: 10px;
+    background-color: #007BFF;
+    border-radius: 5px;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+#progressText {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px; /* Jarak antara teks dan progress bar */
+}
+
+/* Preview Container */
+#previewContainer {
+    display: flex; /* Layout gambar secara horizontal */
+    flex-wrap: wrap; /* Gambar akan turun ke baris berikutnya jika penuh */
+    gap: 10px; /* Jarak antar gambar */
+    max-height: 300px; /* Membatasi tinggi maksimal container */
+    overflow-y: auto; /* Menambahkan scrollbar jika gambar terlalu banyak */
+    padding: 10px;
+    border: 1px solid #ddd; /* Tambahkan border untuk pembatas */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Warna latar belakang preview */
+    margin-bottom: 20px; /* Jarak antara preview container dan elemen lainnya */
+}
+
+/* Gaya untuk Gambar dalam Preview */
+#previewContainer img {
+    max-width: 100px; /* Ukuran maksimal untuk lebar gambar */
+    height: auto; /* Menjaga rasio gambar */
+    border-radius: 5px; /* Membuat sudut gambar melengkung */
+    border: 1px solid #ccc; /* Border ringan untuk gambar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Memberikan bayangan pada gambar */
+    transition: transform 0.3s; /* Animasi hover */
+}
+
+#previewContainer img:hover {
+    transform: scale(1.1); /* Efek zoom saat di-hover */
+    border-color: #007BFF; /* Ubah warna border saat hover */
+}
+
+/* Spinner */
+#loadingSpinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007BFF;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsiveness */
+.container {
+    max-width: 90%; /* Membuat lebih responsif di layar kecil */
+}
+
+textarea {
+    resize: none; /* Mencegah textarea berubah ukuran */
+}
