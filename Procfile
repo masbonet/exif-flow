@@ -1,1 +1,1 @@
-web: python exif-flow.py
+web: gunicorn exif-flow:app
